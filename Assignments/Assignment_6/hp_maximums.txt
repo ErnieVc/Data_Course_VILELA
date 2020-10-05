@@ -1,0 +1,28 @@
+#This code calculates the maximum for each of the three dataframes (original, automatic, max200) of the mtcars dataset.
+#YOU MUST INCLUDE THE MTCARS DATASET FOR THIS CODE TO WORK.
+
+
+#In this part, we made a dataframe the cars of automatic transmission
+auto_transmissions <- mtcars$am == 1
+auto_transmission_dataframe <- mtcars[auto_transmissions,]
+
+
+#In this part, we made a dataframe of the cars of with displacements less than or equal to 200 cu.in.
+disp_max200 <- mtcars$disp == 200.0 | mtcars$disp < 200.0
+disp_max200_dataframe <- mtcars[disp_max200,]
+
+
+#calculating the maximum horsepowers for the original dataframe
+mtcars_max <- max(mtcars$hp)
+
+
+#calculating the maximum horsepowers for the automatic transmission dataframe
+mtcars_max_auto <- max(auto_transmission_dataframe$hp)
+
+
+#calculating the maximum horsepowers for the automatic max200 dataframe
+mtcars_max_max200 <- max(disp_max200_dataframe$hp)
+
+
+#Printing the calculations
+print(c(mtcars_max, mtcars_max_auto, mtcars_max_max200))
