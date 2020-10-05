@@ -3,7 +3,7 @@
 
 
 #In this part, we made a dataframe the cars of automatic transmission
-auto_transmissions <- mtcars$am == 1
+auto_transmissions <- mtcars$am == 0
 auto_transmission_dataframe <- mtcars[auto_transmissions,]
 
 

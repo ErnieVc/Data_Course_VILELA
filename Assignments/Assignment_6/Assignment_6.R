@@ -7,7 +7,7 @@ str(mtcars)
 
 #2) subsets the mtcars dataframe to include only automatic transmissions
 #3) saves this new subset as a new file called “automatic_mtcars.csv” in your Assignment_6 directory
-auto_transmissions <- mtcars$am == "1"
+auto_transmissions <- mtcars$am == "0"
 auto_transmission_dataframe <- mtcars[auto_transmissions,]
 write.csv(auto_transmission_dataframe,"./automatic_mtcars.csv")
 
@@ -67,7 +67,7 @@ text<- "#This code calculates the maximum for each of the three dataframes (orig
 #YOU MUST INCLUDE THE MTCARS DATASET FOR THIS CODE TO WORK.\n
 
 #In this part, we made a dataframe the cars of automatic transmission
-auto_transmissions <- mtcars$am == 1
+auto_transmissions <- mtcars$am == 0
 auto_transmission_dataframe <- mtcars[auto_transmissions,]\n
 
 #In this part, we made a dataframe of the cars of with displacements less than or equal to 200 cu.in.
