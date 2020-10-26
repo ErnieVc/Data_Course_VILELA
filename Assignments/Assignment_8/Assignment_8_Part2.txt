@@ -1,0 +1,22 @@
+#Assignment_8_PART2
+Upload responses to the following as a numbered plaintext document to Canvas:
+1. Are any of your predicted response values from your best model scientifically meaningless? Explain.
+
+Yes, especially for those predictions that deal with Nitrogen. I consider that this is because the model computes all possibilities and in the real world, this type of model is not very realistic.
+
+2. In your plots, did you find any non-linear relationships? Do a bit of research online and give a link to at least one resource explaining how to deal with modeling non-linear relationships in R.
+
+Yes. I used geom_density() to carry out some analyses. I looked up some explanations in the following link:
+https://www.r-bloggers.com/2015/09/fitting-polynomial-regression-in-r/
+
+3. Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this)
+
+nonlinearData <- read_csv("../../Data/non_linear_relationship.csv")
+names(nonlinearData)
+model <- lm(response ~ poly(predictor), data= nonlinearData)
+summary(model)
+
+ggplot(nonlinearData, aes(x=predictor, y=response))+
+  geom_point()+
+  theme_minimal()+
+  stat_smooth(method=lm, formula = y ~ poly(x,5, raw=TRUE))
