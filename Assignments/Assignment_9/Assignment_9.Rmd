@@ -1,43 +1,222 @@
 ---
+title: "Assignment_9"
+author: "Ernie Vilela"
+date: "10/28/2020"
 output: 
-html_document:
-  number_sections=TRUE
-pagetitle: Assignment_9
+  html_document:
+    code_folding: hide
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+#Remember: CMD + SHIFT + K -> will output the HTML view. 
+```
+## Tasks to be completed in this Assignment:
+<li>Use the data set “/Data/GradSchool_Admissions.csv”</li>
+<li>You will explore and model the predictors of graduate school admission </li>
+  <ul><li>the “admit” column is coded as 1=success and 0=failure</li></ul>
+  <ul><li>the other columns are the GRE score, the GPA, and the rank of the undergraduate institution, where I is “top-tier.”</li></ul>
+<li>Document your data explorations, figures, and conclusions in a reproducible R-markdown report</li>
+<li>Upload your self-contained R project, including knitted HTML report, to GitHub in your Assignment_9 directory</li>
+
+### Libraries Used
+Tidiverse, modelr, MASS, and patchwork libraries were used for completing this assignment. 
+```{r, message=FALSE}
+library(tidyverse)
+library(modelr)
+library(MASS)
+library(patchwork)
+```
+### Loading and Summarizing the Data
+The following a summary of the Graduate School Admissions data set: 
+```{r}
+gradData <- read.csv("../../Data/GradSchool_Admissions.csv")
+summary(gradData)
 ```
 
-# **Assignment 9**
+### Cleaning up the data
+<li> We had to turn the integers into logical values (the 1 and 0 into TRUE and FALSE, respectively)</li>
+```{r}
+#Turning the integers into logical.
+gradData$admit <- as.logical(gradData$admit)
 
-In this assignment, you will use R (within R-Studio) to:
+```
+
+<li> We had to turn the ranking numbers into factors</li>
+```{r}
+
+#Turning the ranking to factor
+gradData$rank <- factor(gradData$rank)
+```
+
+
+### Modeling the Predictors of Graduate School Admissions
+
+#### MODEL 1
+```{r}
+
+mod1 <- glm(formula=admit ~ gre + gpa + rank, data=gradData, family = "binomial")
+summary(mod1)
+
+#adding some predictions (the predictions [pred] represent the probabilty of the students that will make it into grad school based on the variables gpa, rank, and gre)
+gradDataPredictions <- add_predictions(gradData, mod1, type="response")
+
   
-+ Load and clean a real data set
-+ Conduct exploratory analyses, including informative figures
-+ Build and test appropriate models
-+ Draw conclusions about your data
-+ Combine all of the above into a well-documented R-Markdown report and export (knit) it into an HTML file
+```
 
-**All file paths should be relative, starting from *your* Assignment_9 directory!!**
+Predictions were created in order to estimate the probability of students that will be admitted to graduate school based on their GPA scores, GRE scores, and their school ranking. A generalized linear model was used to assess the variables. 
+```{r}
+#adding some predictions (the predictions [pred] represent the probabilty of the students that will make it into grad school based on the variables gpa, rank, and gre)
+gradDataPredictions <- add_predictions(gradData, mod1, type="response")
 
-**This means that you need to create a new R-Project named "Assignment_9.Rproj" in your Assignment_9 directory, and work from scripts within that.**
+  
+```
 
 
-## **For credit...**
+##### MODEL 1.1) Graduate School Admissions based on GPA
 
-1.  Push a completed version of your Rproj and R-markdown file (details at end of this assignment) to GitHub
-2.  Your score will also depend on your analyses and presentation of your final report
+```{r}
+#plotting the predictions based on GPA scores
+ggplot(gradDataPredictions, aes(x=gpa, y=pred, color=rank))+
+  geom_point()+
+  labs(x= "GPA scores", y= "Predictions", title= "Probability of Graduate School Admission based on GPA scores", color= "School Ranking")+
+  theme_bw()+
+  theme(title=element_text(face="bold"))
+  
+```
 
-____________
+<p>This graph shows that there is a high probability of admission for those students who are of "top-tier" institutions (School ranking #1). The lower the ranking of the school, the lower the probability of potential graduate school admission.</p>
 
-# Your tasks:
 
-+ Use the data set "/Data/GradSchool_Admissions.csv"
-+ You will explore and model the predictors of graduate school admission
-  - the "admit" column is coded as 1=success and 0=failure
-  - the other columns are the GRE score, the GPA, and the rank of the undergraduate institution, where I is "top-tier."
-+ Document your data explorations, figures, and conclusions in a reproducible R-markdown report
-+ Upload your **self-contained** R project, including knitted HTML report, to GitHub in *your* Assignment_9 directory
+<br></br>
 
+##### MODEL 1.2) Graduate School Admissions based on GRE
+```{r}
+#plotting the predictions based on GRE scores
+ggplot(gradDataPredictions, aes(x=gre, y=pred, color=rank))+
+  geom_point()+
+  labs(x= "GRE score", y= "Predictions", title= "Probability of Graduate School Admission based on GRE scores", color= "School Ranking")+
+  theme_bw()+
+  theme(title=element_text(face="bold"))
+
+
+```
+<p>In this graph it can be observed that a high GRE score can be benefitial on guranteeing admission into a graduate program. The higher the GRE score, the higher the likelihood of those applicants to be admitted into graduate school. </p>
+
+<br></br>
+
+#### MODEL 2
+```{r}
+
+mod2 <- glm(formula=admit ~ gre * gpa * rank, data=gradData, family = "binomial")
+summary(mod2)
+
+#adding some predictions (the predictions [pred] represent the probabilty of the students that will make it into grad school based on the variables gpa, rank, and gre)
+gradDataPredictions <- add_predictions(gradData, mod2, type="response")
+
+  
+```
+
+Predictions were created in order to estimate the probability of students that will be admitted to graduate school based on their GPA scores, GRE scores, and their school ranking. A generalized linear model was used to assess the variables. 
+```{r}
+#adding some predictions (the predictions [pred] represent the probabilty of the students that will make it into grad school based on the variables gpa, rank, and gre)
+gradDataPredictions2 <- add_predictions(gradData, mod2, type="response")
+
+  
+```
+
+
+##### MODEL 2.1) Graduate School Admissions based on GPA
+
+```{r}
+#plotting the predictions based on GPA scores
+ggplot(gradDataPredictions2, aes(x=gpa, y=pred, color=rank))+
+  geom_point()+
+  labs(x= "GPA scores", y= "Predictions", title= "Probability of Graduate School Admission based on GPA scores", color= "School Ranking")+
+  theme_bw()+
+  theme(title=element_text(face="bold"))
+  
+```
+
+<p>This graph shows that there is a high probability of admission for those students who are of "top-tier" institutions (School ranking #1). The lower the ranking of the school, the lower the probability of potential graduate school admission.</p>
+
+
+<br></br>
+
+##### MODEL 2.2) Graduate School Admissions based on GRE
+```{r}
+#plotting the predictions based on GRE scores
+ggplot(gradDataPredictions2, aes(x=gre, y=pred, color=rank))+
+  geom_point()+
+  labs(x= "GRE score", y= "Predictions", title= "Probability of Graduate School Admission based on GRE scores", color= "School Ranking")+
+  theme_bw()+
+  theme(title=element_text(face="bold"))
+
+
+```
+<p>In this graph it can be observed that a high GRE score can be benefitial on guranteeing admission into a graduate program. The higher the GRE score, the higher the likelihood of those applicants to be admitted into graduate school. </p>
+
+<br></br>
+
+
+#### COMPARING MODELS 1 AND 2
+*We will find the mean, in order to find the best fit line model*
+
+<li>The mean of model 1:</li>
+```{r}
+
+mod1mean <- mean(residuals(mod1)^2)
+mod1mean 
+
+```
+<li>The mean of model 2:</li>
+```{r}
+mod2mean <- mean(residuals(mod2)^2)
+mod2mean 
+  
+```
+The lowest number will conform to the best fit model. In this case, that will be model 2. 
+
+<br></br>
+
+#### GATHERING THE PRECTIONS
+*We have made predictions for both model 1 and model 2, as shown previously. We will now consolidate our data.*
+```{r}
+mod_full <- gather_predictions(gradData, mod1, mod2) 
+head(mod_full)
+  
+```
+
+#### GRAPHING THE BEST MODEL
+
+*Looking at the importance of* **GPA scores** *in admissions for the best model:*
+```{r}
+ggplot(mod_full,aes(x=gpa,col=rank)) +
+  geom_point(aes(y=pred)) +
+  geom_smooth(method = "lm", aes(y=pred)) +
+  labs(x= "GPA", y= "Predictions", title= "Probability of Graduate School Admission based on GPA scores", color= "School Ranking")+
+  facet_wrap(~model) +
+  theme_bw()+
+   theme(title=element_text(face="bold"))
+  
+```
+<p>These graphs support the earlier graphs of each model, in which there was significant importance of the high school ranking and high GPA score in the likelihood of those applicants to be admitted into graduate school.
+
+<br></br>
+
+*Looking at the importance of* **GRE scores** *in admissions for the best model:*
+```{r}
+ggplot(mod_full,aes(x=gre,col=rank)) +
+  geom_point(aes(y=pred)) +
+  geom_smooth(method = "lm", aes(y=pred)) +
+  labs(x= "GRE", y= "Predictions", title= "Probability of Graduate School Admission based on GRE scores", color= "School Ranking")+
+  facet_wrap(~model) +
+  theme_bw()+
+   theme(title=element_text(face="bold"))
+  
+```
+<p>These graphs also support the earlier graphs of each model, in which there was significant importance of the high school ranking and high GRE score in the likelihood of those applicants to be admitted into graduate school.
+
+<br></br>
+**Ernie Vilela - 2020**
