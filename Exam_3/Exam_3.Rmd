@@ -1,0 +1,283 @@
+---
+title: "Exam_3"
+author: "Ernie Vilela"
+date: "11/30/2020"
+output: 
+ html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Remember: CMD + SHIFT + K -> will output the HTML view. 
+
+```
+
+### **TASK I**
+
+<p> 
+  <li>Load and clean FacultySalaries_1995.csv file. *Re-create the graph shown in "fig1.png"*</li>
+  <li>Export it to your Exam_3 folder as LASTNAME_Fig_1.jpg (note, that's a jpg, not a png)</li>
+  <li>Please pay attention to what variables are on this graph.  This task is really all about whether you can make a tidy         dataset out of something a bit wonky. </li>
+  <li>Refer back to the video where we cleaned "Bird_Measurements.csv"</li>
+</p>
+#### **Resources Used:**
+  The following libraries were used for completing this assignment. 
+```{r, message=FALSE}
+library(tidyverse)
+library(modelr)
+library(GGally)
+library(lindia)
+library(skimr)
+library(patchwork)
+library(caret)
+library(janitor)
+library(broom)
+```
+
+
+#### **Loading the data:**
+The following loads the data from the FacultySalaries_1995.csv file and puts it into a dataframe called df.
+```{r, message=FALSE, warning=FALSE}
+  #this loads the faculty salaries data
+df <- read.csv("./FacultySalaries_1995.csv")
+
+```
+
+The following displays the column titles of the faculty salaries dataframe
+```{r, message=FALSE, warning=FALSE}
+names(df)
+
+```
+
+Before cleaning up the data, the names will be renamed of the columns, so that we can exactly 
+#recreate the Fig1.png
+```{r, message=FALSE, warning=FALSE}
+renamed_df <- df %>% rename(
+                      Full = AvgFullProfSalary,
+                      Assoc = AvgAssocProfSalary,
+                      Assist = AvgAssistProfSalary)
+names(renamed_df)
+```
+
+#### **Cleaning up the data:**
+We create a Rank column, and a Salary column, allowing us to separate the Salaries by ranking.
+<ul>-We must create a new dataframe(ranked_df), which contains the updated information.</ul>
+<ul>-Lastly, we filter for only the ranks containing I, IIA, IIB tiers.</ul>
+```{r, message=FALSE, warning=FALSE}
+
+ranked_df<- pivot_longer(renamed_df, 
+                      -c(1:4,8:17), 
+                      names_to ="Rank", 
+                      values_to = "Salary", 
+                      names_prefix ="Rank")
+
+filtered_ranked_df <- filter(ranked_df, Tier == "I" | Tier == "IIA"| Tier == "IIB")
+```
+
+We proceed to make salary a category
+```{r, message=FALSE, warning=FALSE}
+salary_graph <- ggplot(filtered_ranked_df, aes(x=Rank, y=Salary, fill=Rank))+ #This plots the landdata_df dataframe
+  facet_wrap(~Tier)+
+  geom_boxplot(outlier.color="black")+
+  labs(x="Rank", y="Salary")+
+  theme_minimal()+
+  theme(axis.text.x=element_text(angle = 45, hjust = 1))
+salary_graph
+ggsave("./VILELA_Fig_1.jpg", salary_graph) #saving the image
+
+```
+
+<br></br>
+
+### **TASK II**
+<p>
+  <li>Export an ANOVA table to a file called "Salary_ANOVA_Summary.txt"</li>
+    <ul><li>The ANOVA model should test the influence of "State", "Tier", and "Rank" on "Salary" but should NOT include any        interactions between those predictors.</ul></li>
+</p>
+
+<ul>-Creating the anova table, with only the interactions between State, Tier, and Rank on Salary</ul>
+<ul>-Then outputting a summary of the Anova table</ul>
+
+```{r, message=FALSE, warning=FALSE}
+a_table <- aov(data = ranked_df, Salary ~ State + Tier + Rank)
+a_table_summary <- summary(a_table) #this outputs a summary.
+a_table_summary
+
+```
+
+
+
+<ul>-Exporing the summarized anova table</ul>
+
+```{r, message=FALSE, warning=FALSE}
+
+capture.output(a_table_summary, file = "./Salary_ANOVA_Summary.txt")
+```
+
+
+<br></br>
+
+### **TASK III**
+<p>
+*The rest of the test uses another data set. The "Juniper_Oils.csv" data. Get it loaded and take a look.*
+  <li>It's not exactly tidy either. Get used to that. It's real data collected as part of a collaboration between Young Living Inc. and UVU Microbiology. A number of dead cedar trees were collected and the chemical composition of their essential oil content was measured. The hypothesis was that certain chemicals would degrade over time since they died in fires. So there are a bunch of columns for chemical compounds, and a column for "YearsSinceBurn." </li>
+  <li>The values under each chemical are Mass-Spec concentrations.Those are the ones the columns we care about for the purposes of this exam. </li>
+  <li>Guess what, I'm giving you a nicely formatted list of the chemical compounds:
+        c("alpha-pinene","para-cymene","alpha-terpineol","cedr-9-ene","alpha-cedrene","beta-cedrene","cis-thujopsene","alpha-himachalene","beta-chamigrene","cuparene","compound 1","alpha-chamigrene","widdrol","cedrol","beta-acorenol","alpha-acorenol","gamma-eudesmol","beta-eudesmol","alpha-eudesmol","cedr-8-en-13-ol","cedr-8-en-15-ol","compound 2","thujopsenal")
+  </li>  
+</p>
+
+#### **Loading the data:**
+<ul>The following loads the data from the Juniper_Oils.csv file and puts it into a dataframe called df1.</ul>
+<ul>-Then outputting a list of the column names</ul>
+```{r, message=FALSE, warning=FALSE}
+df1 <- read.csv("./Juniper_Oils.csv")
+names(df1) #taking a look at the column of df1
+```
+
+#### **Cleaning up the data set**
+<ul>-Using the janitor package to replaces the capitaliztion for low caps, and the spaces and "-" for "_"</ul>
+<ul>-Then outputting a list of the column names</ul>
+```{r, message=FALSE, warning=FALSE}
+names(df1) <- janitor::make_clean_names(names(df1))
+names(df1)
+
+```
+
+<ul>-Using the janitor package, we also clean up the list given. </ul>
+<ul>-We also use the janitor package to accomplish this.</ul>
+
+```{r, message=FALSE, warning=FALSE}
+
+list_chemicals <- c("alpha-pinene","para-cymene","alpha-terpineol","cedr-9-ene","alpha-cedrene",
+                    "beta-cedrene","cis-thujopsene","alpha-himachalene","beta-chamigrene","cuparene",
+                    "compound 1","alpha-chamigrene","widdrol","cedrol","beta-acorenol","alpha-acorenol",
+                    "gamma-eudesmol","beta-eudesmol","alpha-eudesmol","cedr-8-en-13-ol","cedr-8-en-15-ol",
+                    "compound 2","thujopsenal")
+print(list_chemicals)
+
+list_chemicals <- janitor::make_clean_names(print(list_chemicals))
+print(list_chemicals)
+
+```
+
+#### **Selecting the data wanted (chemical compounds)**
+<ul>-Now we can select the data we want: We are going to get the list of chemicals that we care about out of df1.</ul>
+
+```{r, message=FALSE, warning=FALSE}
+df1_select_chemicals <- select(df1, "years_since_burn", all_of(list_chemicals))
+head(df1_select_chemicals) #looking at the data frame structure
+
+
+```
+<ul>-We output the column names of the selected chemicals</ul>
+```{r, message=FALSE, warning=FALSE}
+names(df1_select_chemicals) #looking at the column names
+```        
+
+<ul>-Now we turn it into a long format</ul>
+
+```{r, message=FALSE, warning=FALSE}
+
+
+df1_select_chemicals_longer <- pivot_longer(df1_select_chemicals, 
+                                            cols = list_chemicals, 
+                                            names_to= "compound", 
+                                            values_to= "concentration")
+head(df1_select_chemicals_longer) #looking at the data frame structure
+
+```
+
+<ul>-We output the column names of the selected chemicals in long format</ul>
+```{r, message=FALSE, warning=FALSE}
+names(df1_select_chemicals_longer) #looking at the column names
+```     
+
+
+<br></br>
+
+### **TASK IV**
+<p>
+<li>Make me a graph of the following:
+        x = YearsSinceBurn
+        y = Concentration
+        facet = ChemicalID (use free y-axis scales)
+        *See Fig2.png for an idea of what I'm looking for.*
+        </li>
+        
+<ul>-Making the plot, and saving it into a variable called chemical_graph</ul>
+     
+```{r, message=FALSE, warning=FALSE}
+chemical_graph <- ggplot(df1_select_chemicals_longer, aes(x=years_since_burn, y=concentration))+
+  facet_wrap(~compound, scales= "free_y")+
+  theme_minimal()+
+  geom_smooth()+
+  labs(x="Years Since Burn", y = "Concentration")
+chemical_graph
+
+```
+
+<ul>-Saving the graph.</ul>
+
+```{r, message=FALSE, warning=FALSE}
+
+ggsave("./VILELA_Fig_2.jpg", chemical_graph) 
+```
+
+
+<br></br>  
+
+### **TASK V**
+<p>  
+<li>Use a generalized linear model to find which chemicals show concentrations that are significantly (significant, as in P < 0.05) affected by "Years Since Burn". Use the tidy() function from the broom R package (Thank Dalton for asking about this) in order to produce a data frame showing JUST the significant chemicals and their model output (coefficient estimates, p-values, etc)</li> 
+
+<ul>-We first change the y-axis values to plain numeric</ul>
+```{r, message=FALSE, warning=FALSE}
+
+options(scipen = 999)#this changes the y-axis values to plain numeric
+
+```
+
+<ul>-We make a generilized linear model</ul>
+```{r, message=FALSE, warning=FALSE}
+mod1 <- glm(data=df1_select_chemicals_longer, concentration ~ years_since_burn * compound)
+mod1
+```
+
+<ul>-We tidy up the generalized linear model</ul>
+```{r, message=FALSE, warning=FALSE}
+tidymod <- tidy(mod1)
+tidymod #glimpsing at our tidy data
+
+```
+
+<ul>-We filter the tidy generalized linear model, and we select only the concentrations with significant p-values</ul>
+
+```{r, message=FALSE, warning=FALSE}
+
+significant_tidymod <- filter(tidymod, p.value < 0.05)
+significant_tidymod #glimpsing at our filtered data for significant values
+
+
+```
+
+<ul>-For aesthetic purposes, and in order to match the example given, we will remove the compound prefix that is found at the beginning of each chemical</ul>
+
+```{r, message=FALSE, warning=FALSE}
+#removing the prefix 'compound' in our final data output
+significant_tidymod$term <- gsub("compound", "", significant_tidymod$term)
+significant_tidymod
+```
+
+  
+
+<br></br>
+
+### **TASK VI**
+<p><li>Commit and push all your code and files to GitHub.</li></p>
+ [Click to here visit Github Repository](https://github.com/ErnieVc/Data_Course_VILELA){target="blank"}
+
