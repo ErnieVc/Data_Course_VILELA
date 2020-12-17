@@ -1697,38 +1697,550 @@ oriented_sequences &lt;- OrientNucleotides(raw_sequences)</code></pre>
 #and turning them all to the same length
 
 #muscle alignment
-
-#muscle_aligned_sequences &lt;- muscle(oriented_sequences)</code></pre>
+muscle_aligned_sequences &lt;- muscle(oriented_sequences)</code></pre>
+<pre><code>## 
+## MUSCLE v3.8.31 by Robert C. Edgar
+## 
+## http://www.drive5.com/muscle
+## This software is donated to the public domain.
+## Please cite: Edgar, R.C. Nucleic Acids Res 32(5), 1792-97.
+## 
+## filea3f231febd1c 30 seqs, max length 16857, avg  length 16543
+## 835 MB(10%)00:00:00                Iter   1    0.22%  K-mer dist pass 1
+835 MB(10%)00:00:00                Iter   1  100.00%  K-mer dist pass 1
+## 835 MB(10%)00:00:00                Iter   1    0.22%  K-mer dist pass 2
+835 MB(10%)00:00:00                Iter   1  100.00%  K-mer dist pass 2
+## 844 MB(10%)00:00:00                Iter   1    3.45%  Align node       
+1170 MB(14%)00:00:05                Iter   1    6.90%  Align node
+1175 MB(14%)00:00:09                Iter   1   10.34%  Align node
+1213 MB(14%)00:00:14                Iter   1   13.79%  Align node
+1218 MB(14%)00:00:18                Iter   1   17.24%  Align node
+1245 MB(14%)00:00:22                Iter   1   20.69%  Align node
+1264 MB(15%)00:00:27                Iter   1   24.14%  Align node
+1269 MB(15%)00:00:31                Iter   1   27.59%  Align node
+1274 MB(15%)00:00:35                Iter   1   31.03%  Align node
+1274 MB(15%)00:00:40                Iter   1   34.48%  Align node
+1274 MB(15%)00:00:44                Iter   1   37.93%  Align node
+1274 MB(15%)00:00:49                Iter   1   41.38%  Align node
+1274 MB(15%)00:00:53                Iter   1   44.83%  Align node
+1274 MB(15%)00:00:58                Iter   1   48.28%  Align node
+1274 MB(15%)00:01:02                Iter   1   51.72%  Align node
+1274 MB(15%)00:01:07                Iter   1   55.17%  Align node
+1285 MB(15%)00:01:12                Iter   1   58.62%  Align node
+1290 MB(15%)00:01:18                Iter   1   62.07%  Align node
+1290 MB(15%)00:01:24                Iter   1   65.52%  Align node
+1290 MB(15%)00:01:29                Iter   1   68.97%  Align node
+1290 MB(15%)00:01:34                Iter   1   72.41%  Align node
+1290 MB(15%)00:01:39                Iter   1   75.86%  Align node
+1290 MB(15%)00:01:44                Iter   1   79.31%  Align node
+1290 MB(15%)00:01:49                Iter   1   82.76%  Align node
+1290 MB(15%)00:01:54                Iter   1   86.21%  Align node
+1290 MB(15%)00:01:59                Iter   1   89.66%  Align node
+1290 MB(15%)00:02:04                Iter   1   93.10%  Align node
+1290 MB(15%)00:02:08                Iter   1   96.55%  Align node
+1290 MB(15%)00:02:13                Iter   1  100.00%  Align node
+1290 MB(15%)00:02:19                Iter   1  100.00%  Align node
+## 1290 MB(15%)00:02:19                Iter   1    3.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1    6.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   10.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   13.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   16.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   20.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   23.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   26.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   30.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   33.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   36.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   40.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   43.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   46.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   50.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   53.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   56.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   60.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   63.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   66.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   70.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   73.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   76.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   80.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   83.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   86.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   90.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   93.33%  Root alignment
+1290 MB(15%)00:02:19                Iter   1   96.67%  Root alignment
+1290 MB(15%)00:02:19                Iter   1  100.00%  Root alignment
+1290 MB(15%)00:02:19                Iter   1  100.00%  Root alignment
+## 1290 MB(15%)00:02:19                Iter   2    3.57%  Refine tree   
+1290 MB(15%)00:02:24                Iter   2    7.14%  Refine tree
+1290 MB(15%)00:02:28                Iter   2   10.71%  Refine tree
+1290 MB(15%)00:02:33                Iter   2   14.29%  Refine tree
+1290 MB(15%)00:02:38                Iter   2   17.86%  Refine tree
+1290 MB(15%)00:02:42                Iter   2   21.43%  Refine tree
+1290 MB(15%)00:02:47                Iter   2   25.00%  Refine tree
+1290 MB(15%)00:02:52                Iter   2   28.57%  Refine tree
+1290 MB(15%)00:02:57                Iter   2   32.14%  Refine tree
+1290 MB(15%)00:03:01                Iter   2   35.71%  Refine tree
+1290 MB(15%)00:03:06                Iter   2   39.29%  Refine tree
+1290 MB(15%)00:03:11                Iter   2   42.86%  Refine tree
+1290 MB(15%)00:03:16                Iter   2   46.43%  Refine tree
+1290 MB(15%)00:03:21                Iter   2   50.00%  Refine tree
+1290 MB(15%)00:03:26                Iter   2   53.57%  Refine tree
+1290 MB(15%)00:03:32                Iter   2  100.00%  Refine tree
+## 1290 MB(15%)00:03:32                Iter   2    3.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2    6.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   10.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   13.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   16.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   20.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   23.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   26.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   30.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   33.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   36.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   40.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   43.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   46.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   50.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   53.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   56.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   60.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   63.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   66.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   70.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   73.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   76.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   80.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   83.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   86.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   90.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   93.33%  Root alignment
+1290 MB(15%)00:03:32                Iter   2   96.67%  Root alignment
+1290 MB(15%)00:03:32                Iter   2  100.00%  Root alignment
+1290 MB(15%)00:03:32                Iter   2  100.00%  Root alignment
+## 1290 MB(15%)00:03:32                Iter   2  100.00%  Root alignment
+## 1290 MB(15%)00:03:38                Iter   3    3.51%  Refine biparts
+1290 MB(15%)00:03:43                Iter   3    5.26%  Refine biparts
+1290 MB(15%)00:03:49                Iter   3    7.02%  Refine biparts
+1290 MB(15%)00:03:55                Iter   3    8.77%  Refine biparts
+1290 MB(15%)00:04:00                Iter   3   10.53%  Refine biparts
+1290 MB(15%)00:04:06                Iter   3   12.28%  Refine biparts
+1290 MB(15%)00:04:12                Iter   3   14.04%  Refine biparts
+1290 MB(15%)00:04:18                Iter   3   15.79%  Refine biparts
+1290 MB(15%)00:04:24                Iter   3   17.54%  Refine biparts
+1290 MB(15%)00:04:30                Iter   3   19.30%  Refine biparts
+1290 MB(15%)00:04:36                Iter   3   21.05%  Refine biparts
+1290 MB(15%)00:04:42                Iter   3   22.81%  Refine biparts
+1290 MB(15%)00:04:47                Iter   3   24.56%  Refine biparts
+1290 MB(15%)00:04:53                Iter   3   26.32%  Refine biparts
+1290 MB(15%)00:04:59                Iter   3   28.07%  Refine biparts
+1290 MB(15%)00:05:04                Iter   3   29.82%  Refine biparts
+1290 MB(15%)00:05:10                Iter   3   31.58%  Refine biparts
+1290 MB(15%)00:05:16                Iter   3   33.33%  Refine biparts
+1290 MB(15%)00:05:22                Iter   3   35.09%  Refine biparts
+1290 MB(15%)00:05:28                Iter   3   36.84%  Refine biparts
+1290 MB(15%)00:05:34                Iter   3   38.60%  Refine biparts
+1290 MB(15%)00:05:40                Iter   3   40.35%  Refine biparts
+1290 MB(15%)00:05:46                Iter   3   42.11%  Refine biparts
+1290 MB(15%)00:05:51                Iter   3   43.86%  Refine biparts
+1290 MB(15%)00:05:57                Iter   3   45.61%  Refine biparts
+1290 MB(15%)00:06:04                Iter   3   47.37%  Refine biparts
+1290 MB(15%)00:06:11                Iter   3   49.12%  Refine biparts
+1290 MB(15%)00:06:17                Iter   3   50.88%  Refine biparts
+1290 MB(15%)00:06:23                Iter   3   52.63%  Refine biparts
+1290 MB(15%)00:06:29                Iter   3   54.39%  Refine biparts
+1290 MB(15%)00:06:34                Iter   3   56.14%  Refine biparts
+1290 MB(15%)00:06:39                Iter   3   57.89%  Refine biparts
+1290 MB(15%)00:06:44                Iter   3   59.65%  Refine biparts
+1290 MB(15%)00:06:50                Iter   3   61.40%  Refine biparts
+1290 MB(15%)00:06:55                Iter   3   63.16%  Refine biparts
+1290 MB(15%)00:07:00                Iter   3   64.91%  Refine biparts
+1290 MB(15%)00:07:05                Iter   3   66.67%  Refine biparts
+1290 MB(15%)00:07:11                Iter   3   68.42%  Refine biparts
+1290 MB(15%)00:07:16                Iter   3   70.18%  Refine biparts
+1290 MB(15%)00:07:22                Iter   3   71.93%  Refine biparts
+1290 MB(15%)00:07:27                Iter   3   73.68%  Refine biparts
+1290 MB(15%)00:07:32                Iter   3   75.44%  Refine biparts
+1290 MB(15%)00:07:38                Iter   3   77.19%  Refine biparts
+1290 MB(15%)00:07:43                Iter   3   78.95%  Refine biparts
+1290 MB(15%)00:07:48                Iter   3   80.70%  Refine biparts
+1290 MB(15%)00:07:54                Iter   3   82.46%  Refine biparts
+1290 MB(15%)00:07:59                Iter   3   84.21%  Refine biparts
+1290 MB(15%)00:08:05                Iter   3   85.96%  Refine biparts
+1290 MB(15%)00:08:11                Iter   3   87.72%  Refine biparts
+1290 MB(15%)00:08:17                Iter   3   89.47%  Refine biparts
+1290 MB(15%)00:08:23                Iter   3   91.23%  Refine biparts
+1290 MB(15%)00:08:29                Iter   3   92.98%  Refine biparts
+1290 MB(15%)00:08:35                Iter   3   94.74%  Refine biparts
+1290 MB(15%)00:08:41                Iter   3   96.49%  Refine biparts
+1290 MB(15%)00:08:47                Iter   3   98.25%  Refine biparts
+1290 MB(15%)00:08:53                Iter   3  100.00%  Refine biparts
+1290 MB(15%)00:08:58                Iter   3  101.75%  Refine biparts
+1290 MB(15%)00:08:58                Iter   3  100.00%  Refine biparts
+## 1290 MB(15%)00:09:03                Iter   4    3.51%  Refine biparts
+1290 MB(15%)00:09:08                Iter   4    5.26%  Refine biparts
+1290 MB(15%)00:09:14                Iter   4    7.02%  Refine biparts
+1290 MB(15%)00:09:19                Iter   4    8.77%  Refine biparts
+1290 MB(15%)00:09:25                Iter   4   10.53%  Refine biparts
+1290 MB(15%)00:09:30                Iter   4   12.28%  Refine biparts
+1290 MB(15%)00:09:35                Iter   4   14.04%  Refine biparts
+1290 MB(15%)00:09:40                Iter   4   15.79%  Refine biparts
+1290 MB(15%)00:09:46                Iter   4   17.54%  Refine biparts
+1290 MB(15%)00:09:51                Iter   4   19.30%  Refine biparts
+1290 MB(15%)00:09:56                Iter   4   21.05%  Refine biparts
+1290 MB(15%)00:10:01                Iter   4   22.81%  Refine biparts
+1290 MB(15%)00:10:05                Iter   4   24.56%  Refine biparts
+1290 MB(15%)00:10:10                Iter   4   26.32%  Refine biparts
+1290 MB(15%)00:10:15                Iter   4   28.07%  Refine biparts
+1290 MB(15%)00:10:20                Iter   4   29.82%  Refine biparts
+1290 MB(15%)00:10:25                Iter   4   31.58%  Refine biparts
+1290 MB(15%)00:10:30                Iter   4   33.33%  Refine biparts
+1290 MB(15%)00:10:36                Iter   4   35.09%  Refine biparts
+1290 MB(15%)00:10:41                Iter   4   36.84%  Refine biparts
+1290 MB(15%)00:10:47                Iter   4   38.60%  Refine biparts
+1290 MB(15%)00:10:52                Iter   4   40.35%  Refine biparts
+1290 MB(15%)00:10:57                Iter   4   42.11%  Refine biparts
+1290 MB(15%)00:11:03                Iter   4   43.86%  Refine biparts
+1290 MB(15%)00:11:08                Iter   4   45.61%  Refine biparts
+1290 MB(15%)00:11:13                Iter   4   47.37%  Refine biparts
+1290 MB(15%)00:11:18                Iter   4   49.12%  Refine biparts
+1290 MB(15%)00:11:23                Iter   4   50.88%  Refine biparts
+1290 MB(15%)00:11:28                Iter   4   52.63%  Refine biparts
+1290 MB(15%)00:11:34                Iter   4   54.39%  Refine biparts
+1290 MB(15%)00:11:39                Iter   4   56.14%  Refine biparts
+1290 MB(15%)00:11:44                Iter   4   57.89%  Refine biparts
+1290 MB(15%)00:11:50                Iter   4   59.65%  Refine biparts
+1290 MB(15%)00:11:55                Iter   4   61.40%  Refine biparts
+1290 MB(15%)00:12:01                Iter   4   63.16%  Refine biparts
+1290 MB(15%)00:12:06                Iter   4   64.91%  Refine biparts
+1290 MB(15%)00:12:11                Iter   4   66.67%  Refine biparts
+1290 MB(15%)00:12:16                Iter   4   68.42%  Refine biparts
+1290 MB(15%)00:12:21                Iter   4   70.18%  Refine biparts
+1290 MB(15%)00:12:26                Iter   4   71.93%  Refine biparts
+1290 MB(15%)00:12:32                Iter   4   73.68%  Refine biparts
+1290 MB(15%)00:12:37                Iter   4   75.44%  Refine biparts
+1290 MB(15%)00:12:42                Iter   4   77.19%  Refine biparts
+1290 MB(15%)00:12:47                Iter   4   78.95%  Refine biparts
+1290 MB(15%)00:12:52                Iter   4   80.70%  Refine biparts
+1290 MB(15%)00:12:57                Iter   4   82.46%  Refine biparts
+1290 MB(15%)00:13:02                Iter   4   84.21%  Refine biparts
+1290 MB(15%)00:13:07                Iter   4   85.96%  Refine biparts
+1290 MB(15%)00:13:12                Iter   4   87.72%  Refine biparts
+1290 MB(15%)00:13:16                Iter   4   89.47%  Refine biparts
+1290 MB(15%)00:13:21                Iter   4   91.23%  Refine biparts
+1290 MB(15%)00:13:26                Iter   4   92.98%  Refine biparts
+1290 MB(15%)00:13:31                Iter   4   94.74%  Refine biparts
+1290 MB(15%)00:13:35                Iter   4   96.49%  Refine biparts
+1290 MB(15%)00:13:40                Iter   4   98.25%  Refine biparts
+1290 MB(15%)00:13:45                Iter   4  100.00%  Refine biparts
+1290 MB(15%)00:13:49                Iter   4  101.75%  Refine biparts
+1290 MB(15%)00:13:49                Iter   4  100.00%  Refine biparts
+## 1290 MB(15%)00:13:54                Iter   5    3.51%  Refine biparts
+1290 MB(15%)00:13:59                Iter   5    5.26%  Refine biparts
+1290 MB(15%)00:14:04                Iter   5    7.02%  Refine biparts
+1290 MB(15%)00:14:08                Iter   5    8.77%  Refine biparts
+1290 MB(15%)00:14:13                Iter   5   10.53%  Refine biparts
+1290 MB(15%)00:14:18                Iter   5   12.28%  Refine biparts
+1290 MB(15%)00:14:23                Iter   5   14.04%  Refine biparts
+1290 MB(15%)00:14:28                Iter   5   15.79%  Refine biparts
+1290 MB(15%)00:14:33                Iter   5   17.54%  Refine biparts
+1290 MB(15%)00:14:38                Iter   5   19.30%  Refine biparts
+1290 MB(15%)00:14:43                Iter   5   21.05%  Refine biparts
+1290 MB(15%)00:14:49                Iter   5   22.81%  Refine biparts
+1290 MB(15%)00:14:54                Iter   5   24.56%  Refine biparts
+1290 MB(15%)00:14:59                Iter   5   26.32%  Refine biparts
+1290 MB(15%)00:15:04                Iter   5   28.07%  Refine biparts
+1290 MB(15%)00:15:09                Iter   5   29.82%  Refine biparts
+1290 MB(15%)00:15:14                Iter   5   31.58%  Refine biparts
+1290 MB(15%)00:15:19                Iter   5   33.33%  Refine biparts
+1290 MB(15%)00:15:24                Iter   5   35.09%  Refine biparts
+1290 MB(15%)00:15:29                Iter   5   36.84%  Refine biparts
+1290 MB(15%)00:15:34                Iter   5   38.60%  Refine biparts
+1290 MB(15%)00:15:40                Iter   5   40.35%  Refine biparts
+1290 MB(15%)00:15:45                Iter   5   42.11%  Refine biparts
+1290 MB(15%)00:15:50                Iter   5   43.86%  Refine biparts
+1290 MB(15%)00:15:55                Iter   5   45.61%  Refine biparts
+1290 MB(15%)00:16:01                Iter   5   47.37%  Refine biparts
+1290 MB(15%)00:16:06                Iter   5   49.12%  Refine biparts
+1290 MB(15%)00:16:11                Iter   5   50.88%  Refine biparts
+1290 MB(15%)00:16:18                Iter   5   52.63%  Refine biparts
+1290 MB(15%)00:16:22                Iter   5   54.39%  Refine biparts
+1290 MB(15%)00:16:27                Iter   5   56.14%  Refine biparts
+1290 MB(15%)00:16:32                Iter   5   57.89%  Refine biparts
+1290 MB(15%)00:16:37                Iter   5   59.65%  Refine biparts
+1290 MB(15%)00:16:42                Iter   5   61.40%  Refine biparts
+1290 MB(15%)00:16:47                Iter   5   63.16%  Refine biparts
+1290 MB(15%)00:16:52                Iter   5   64.91%  Refine biparts
+1290 MB(15%)00:16:58                Iter   5   66.67%  Refine biparts
+1290 MB(15%)00:17:05                Iter   5   68.42%  Refine biparts
+1290 MB(15%)00:17:10                Iter   5   70.18%  Refine biparts
+1290 MB(15%)00:17:15                Iter   5   71.93%  Refine biparts
+1290 MB(15%)00:17:20                Iter   5   73.68%  Refine biparts
+1290 MB(15%)00:17:26                Iter   5   75.44%  Refine biparts
+1290 MB(15%)00:17:32                Iter   5   77.19%  Refine biparts
+1290 MB(15%)00:17:37                Iter   5   78.95%  Refine biparts
+1290 MB(15%)00:17:43                Iter   5   80.70%  Refine biparts
+1290 MB(15%)00:17:48                Iter   5   82.46%  Refine biparts
+1290 MB(15%)00:17:54                Iter   5   84.21%  Refine biparts
+1290 MB(15%)00:17:59                Iter   5   85.96%  Refine biparts
+1290 MB(15%)00:18:04                Iter   5   87.72%  Refine biparts
+1290 MB(15%)00:18:10                Iter   5   89.47%  Refine biparts
+1290 MB(15%)00:18:16                Iter   5   91.23%  Refine biparts
+1290 MB(15%)00:18:22                Iter   5   92.98%  Refine biparts
+1290 MB(15%)00:18:28                Iter   5   94.74%  Refine biparts
+1290 MB(15%)00:18:33                Iter   5   96.49%  Refine biparts
+1290 MB(15%)00:18:39                Iter   5   98.25%  Refine biparts
+1290 MB(15%)00:18:44                Iter   5  100.00%  Refine biparts
+1290 MB(15%)00:18:49                Iter   5  101.75%  Refine biparts
+1290 MB(15%)00:18:49                Iter   5  100.00%  Refine biparts
+## 1290 MB(15%)00:18:55                Iter   6    3.51%  Refine biparts
+1290 MB(15%)00:19:00                Iter   6    5.26%  Refine biparts
+1290 MB(15%)00:19:07                Iter   6    7.02%  Refine biparts
+1290 MB(15%)00:19:13                Iter   6    8.77%  Refine biparts
+1290 MB(15%)00:19:19                Iter   6   10.53%  Refine biparts
+1290 MB(15%)00:19:25                Iter   6   12.28%  Refine biparts
+1290 MB(15%)00:19:31                Iter   6   14.04%  Refine biparts
+1290 MB(15%)00:19:38                Iter   6   15.79%  Refine biparts
+1290 MB(15%)00:19:44                Iter   6   17.54%  Refine biparts
+1290 MB(15%)00:19:50                Iter   6   19.30%  Refine biparts
+1290 MB(15%)00:19:56                Iter   6   21.05%  Refine biparts
+1290 MB(15%)00:20:02                Iter   6   22.81%  Refine biparts
+1290 MB(15%)00:20:08                Iter   6   24.56%  Refine biparts
+1290 MB(15%)00:20:14                Iter   6   26.32%  Refine biparts
+1290 MB(15%)00:20:21                Iter   6   28.07%  Refine biparts
+1290 MB(15%)00:20:27                Iter   6   29.82%  Refine biparts
+1290 MB(15%)00:20:34                Iter   6   31.58%  Refine biparts
+1290 MB(15%)00:20:40                Iter   6   33.33%  Refine biparts
+1290 MB(15%)00:20:46                Iter   6   35.09%  Refine biparts
+1290 MB(15%)00:20:53                Iter   6   36.84%  Refine biparts
+1290 MB(15%)00:21:00                Iter   6   38.60%  Refine biparts
+1290 MB(15%)00:21:05                Iter   6   40.35%  Refine biparts
+1290 MB(15%)00:21:12                Iter   6   42.11%  Refine biparts
+1290 MB(15%)00:21:17                Iter   6   43.86%  Refine biparts
+1290 MB(15%)00:21:23                Iter   6   45.61%  Refine biparts
+1290 MB(15%)00:21:29                Iter   6   47.37%  Refine biparts
+1290 MB(15%)00:21:34                Iter   6   49.12%  Refine biparts
+1290 MB(15%)00:21:40                Iter   6   50.88%  Refine biparts
+1290 MB(15%)00:21:45                Iter   6   52.63%  Refine biparts
+1290 MB(15%)00:21:51                Iter   6   54.39%  Refine biparts
+1290 MB(15%)00:21:57                Iter   6   56.14%  Refine biparts
+1290 MB(15%)00:22:02                Iter   6   57.89%  Refine biparts
+1290 MB(15%)00:22:08                Iter   6   59.65%  Refine biparts
+1290 MB(15%)00:22:14                Iter   6   61.40%  Refine biparts
+1290 MB(15%)00:22:19                Iter   6   63.16%  Refine biparts
+1290 MB(15%)00:22:26                Iter   6   64.91%  Refine biparts
+1290 MB(15%)00:22:31                Iter   6   66.67%  Refine biparts
+1290 MB(15%)00:22:37                Iter   6   68.42%  Refine biparts
+1290 MB(15%)00:22:43                Iter   6   70.18%  Refine biparts
+1290 MB(15%)00:22:48                Iter   6   71.93%  Refine biparts
+1290 MB(15%)00:22:54                Iter   6   73.68%  Refine biparts
+1290 MB(15%)00:23:00                Iter   6   75.44%  Refine biparts
+1290 MB(15%)00:23:07                Iter   6   77.19%  Refine biparts
+1290 MB(15%)00:23:13                Iter   6   78.95%  Refine biparts
+1290 MB(15%)00:23:19                Iter   6   80.70%  Refine biparts
+1290 MB(15%)00:23:25                Iter   6   82.46%  Refine biparts
+1290 MB(15%)00:23:31                Iter   6   84.21%  Refine biparts
+1290 MB(15%)00:23:38                Iter   6   85.96%  Refine biparts
+1290 MB(15%)00:23:44                Iter   6   87.72%  Refine biparts
+1290 MB(15%)00:23:50                Iter   6   89.47%  Refine biparts
+1290 MB(15%)00:23:55                Iter   6   91.23%  Refine biparts
+1290 MB(15%)00:24:01                Iter   6   92.98%  Refine biparts
+1290 MB(15%)00:24:07                Iter   6   94.74%  Refine biparts
+1290 MB(15%)00:24:12                Iter   6   96.49%  Refine biparts
+1290 MB(15%)00:24:18                Iter   6   98.25%  Refine biparts
+1290 MB(15%)00:24:24                Iter   6  100.00%  Refine biparts
+1290 MB(15%)00:24:29                Iter   6  101.75%  Refine biparts
+1290 MB(15%)00:24:29                Iter   6  100.00%  Refine biparts
+## 1290 MB(15%)00:24:35                Iter   7    3.51%  Refine biparts
+1290 MB(15%)00:24:40                Iter   7    5.26%  Refine biparts
+1290 MB(15%)00:24:47                Iter   7    7.02%  Refine biparts
+1290 MB(15%)00:24:52                Iter   7    8.77%  Refine biparts
+1290 MB(15%)00:24:59                Iter   7   10.53%  Refine biparts
+1290 MB(15%)00:25:05                Iter   7   12.28%  Refine biparts
+1290 MB(15%)00:25:11                Iter   7   14.04%  Refine biparts
+1290 MB(15%)00:25:17                Iter   7   15.79%  Refine biparts
+1290 MB(15%)00:25:23                Iter   7   17.54%  Refine biparts
+1290 MB(15%)00:25:28                Iter   7   19.30%  Refine biparts
+1290 MB(15%)00:25:35                Iter   7   21.05%  Refine biparts
+1290 MB(15%)00:25:41                Iter   7   22.81%  Refine biparts
+1290 MB(15%)00:25:48                Iter   7   24.56%  Refine biparts
+1290 MB(15%)00:25:54                Iter   7   26.32%  Refine biparts
+1290 MB(15%)00:26:00                Iter   7   28.07%  Refine biparts
+1290 MB(15%)00:26:06                Iter   7   29.82%  Refine biparts
+1290 MB(15%)00:26:13                Iter   7   31.58%  Refine biparts
+1290 MB(15%)00:26:19                Iter   7   33.33%  Refine biparts
+1290 MB(15%)00:26:25                Iter   7   35.09%  Refine biparts
+1290 MB(15%)00:26:31                Iter   7   36.84%  Refine biparts
+1290 MB(15%)00:26:37                Iter   7   38.60%  Refine biparts
+1290 MB(15%)00:26:42                Iter   7   40.35%  Refine biparts
+1290 MB(15%)00:26:48                Iter   7   42.11%  Refine biparts
+1290 MB(15%)00:26:53                Iter   7   43.86%  Refine biparts
+1290 MB(15%)00:26:59                Iter   7   45.61%  Refine biparts
+1290 MB(15%)00:27:05                Iter   7   47.37%  Refine biparts
+1290 MB(15%)00:27:11                Iter   7   49.12%  Refine biparts
+1290 MB(15%)00:27:16                Iter   7   50.88%  Refine biparts
+1290 MB(15%)00:27:21                Iter   7   52.63%  Refine biparts
+1290 MB(15%)00:27:26                Iter   7   54.39%  Refine biparts
+1290 MB(15%)00:27:31                Iter   7   56.14%  Refine biparts
+1290 MB(15%)00:27:35                Iter   7   57.89%  Refine biparts
+1290 MB(15%)00:27:40                Iter   7   59.65%  Refine biparts
+1290 MB(15%)00:27:45                Iter   7   61.40%  Refine biparts
+1290 MB(15%)00:27:50                Iter   7   63.16%  Refine biparts
+1290 MB(15%)00:27:55                Iter   7   64.91%  Refine biparts
+1290 MB(15%)00:28:01                Iter   7   66.67%  Refine biparts
+1290 MB(15%)00:28:06                Iter   7   68.42%  Refine biparts
+1290 MB(15%)00:28:10                Iter   7   70.18%  Refine biparts
+1290 MB(15%)00:28:15                Iter   7   71.93%  Refine biparts
+1290 MB(15%)00:28:20                Iter   7   73.68%  Refine biparts
+1290 MB(15%)00:28:25                Iter   7   75.44%  Refine biparts
+1290 MB(15%)00:28:30                Iter   7   77.19%  Refine biparts
+1290 MB(15%)00:28:35                Iter   7   78.95%  Refine biparts
+1290 MB(15%)00:28:40                Iter   7   80.70%  Refine biparts
+1290 MB(15%)00:28:45                Iter   7   82.46%  Refine biparts
+1290 MB(15%)00:28:50                Iter   7   84.21%  Refine biparts
+1290 MB(15%)00:28:55                Iter   7   85.96%  Refine biparts
+1290 MB(15%)00:29:00                Iter   7   87.72%  Refine biparts
+1290 MB(15%)00:29:06                Iter   7   89.47%  Refine biparts
+1290 MB(15%)00:29:12                Iter   7   91.23%  Refine biparts
+1290 MB(15%)00:29:17                Iter   7   92.98%  Refine biparts
+1290 MB(15%)00:29:22                Iter   7   94.74%  Refine biparts
+1290 MB(15%)00:29:28                Iter   7   96.49%  Refine biparts
+1290 MB(15%)00:29:33                Iter   7   98.25%  Refine biparts
+1290 MB(15%)00:29:38                Iter   7  100.00%  Refine biparts
+1290 MB(15%)00:29:44                Iter   7  101.75%  Refine biparts
+1290 MB(15%)00:29:44                Iter   7  100.00%  Refine biparts
+## 1290 MB(15%)00:29:50                Iter   8    3.51%  Refine biparts
+1290 MB(15%)00:29:56                Iter   8    5.26%  Refine biparts
+1290 MB(15%)00:30:01                Iter   8    7.02%  Refine biparts
+1290 MB(15%)00:30:07                Iter   8    8.77%  Refine biparts
+1290 MB(15%)00:30:12                Iter   8   10.53%  Refine biparts
+1290 MB(15%)00:30:17                Iter   8   12.28%  Refine biparts
+1290 MB(15%)00:30:22                Iter   8   14.04%  Refine biparts
+1290 MB(15%)00:30:27                Iter   8   15.79%  Refine biparts
+1290 MB(15%)00:30:32                Iter   8   17.54%  Refine biparts
+1290 MB(15%)00:30:36                Iter   8   19.30%  Refine biparts
+1290 MB(15%)00:30:41                Iter   8   21.05%  Refine biparts
+1290 MB(15%)00:30:46                Iter   8   22.81%  Refine biparts
+1290 MB(15%)00:30:51                Iter   8   24.56%  Refine biparts
+1290 MB(15%)00:30:56                Iter   8   26.32%  Refine biparts
+1290 MB(15%)00:31:00                Iter   8   28.07%  Refine biparts
+1290 MB(15%)00:31:05                Iter   8   29.82%  Refine biparts
+1290 MB(15%)00:31:10                Iter   8   31.58%  Refine biparts
+1290 MB(15%)00:31:15                Iter   8   33.33%  Refine biparts
+1290 MB(15%)00:31:20                Iter   8   35.09%  Refine biparts
+1290 MB(15%)00:31:24                Iter   8   36.84%  Refine biparts
+1290 MB(15%)00:31:29                Iter   8   38.60%  Refine biparts
+1290 MB(15%)00:31:33                Iter   8   40.35%  Refine biparts
+1290 MB(15%)00:31:38                Iter   8   42.11%  Refine biparts
+1290 MB(15%)00:31:43                Iter   8   43.86%  Refine biparts
+1290 MB(15%)00:31:47                Iter   8   45.61%  Refine biparts
+1290 MB(15%)00:31:52                Iter   8   47.37%  Refine biparts
+1290 MB(15%)00:31:56                Iter   8   49.12%  Refine biparts
+1290 MB(15%)00:32:01                Iter   8   50.88%  Refine biparts
+1290 MB(15%)00:32:06                Iter   8   52.63%  Refine biparts
+1290 MB(15%)00:32:11                Iter   8   54.39%  Refine biparts
+1290 MB(15%)00:32:16                Iter   8   56.14%  Refine biparts
+1290 MB(15%)00:32:20                Iter   8   57.89%  Refine biparts
+1290 MB(15%)00:32:25                Iter   8   59.65%  Refine biparts
+1290 MB(15%)00:32:30                Iter   8   61.40%  Refine biparts
+1290 MB(15%)00:32:35                Iter   8   63.16%  Refine biparts
+1290 MB(15%)00:32:40                Iter   8   64.91%  Refine biparts
+1290 MB(15%)00:32:45                Iter   8   66.67%  Refine biparts
+1290 MB(15%)00:32:52                Iter   8   68.42%  Refine biparts
+1290 MB(15%)00:32:57                Iter   8   70.18%  Refine biparts
+1290 MB(15%)00:33:04                Iter   8   71.93%  Refine biparts
+1290 MB(15%)00:33:10                Iter   8   73.68%  Refine biparts
+1290 MB(15%)00:33:16                Iter   8   75.44%  Refine biparts
+1290 MB(15%)00:33:23                Iter   8   77.19%  Refine biparts
+1290 MB(15%)00:33:28                Iter   8   78.95%  Refine biparts
+1290 MB(15%)00:33:34                Iter   8   80.70%  Refine biparts
+1290 MB(15%)00:33:40                Iter   8   82.46%  Refine biparts
+1290 MB(15%)00:33:45                Iter   8   84.21%  Refine biparts
+1290 MB(15%)00:33:52                Iter   8   85.96%  Refine biparts
+1290 MB(15%)00:33:59                Iter   8   87.72%  Refine biparts
+1290 MB(15%)00:34:05                Iter   8   89.47%  Refine biparts
+1290 MB(15%)00:34:11                Iter   8   91.23%  Refine biparts
+1290 MB(15%)00:34:16                Iter   8   92.98%  Refine biparts
+1290 MB(15%)00:34:22                Iter   8   94.74%  Refine biparts
+1290 MB(15%)00:34:27                Iter   8   96.49%  Refine biparts
+1290 MB(15%)00:34:32                Iter   8   98.25%  Refine biparts
+1290 MB(15%)00:34:38                Iter   8  100.00%  Refine biparts
+1290 MB(15%)00:34:43                Iter   8  101.75%  Refine biparts
+1290 MB(15%)00:34:43                Iter   8  100.00%  Refine biparts</code></pre>
 <li>
 Excising non-coding regions and converting the multiple alignment format into string format
 </li>
-<pre class="r"><code>#muscle_dnastr = as(muscle_aligned_sequences, &quot;DNAStringSet&quot;) #this excises the non coding regions, and turns the multiple alignment into DNAstring</code></pre>
+<pre class="r"><code>muscle_dnastr = as(muscle_aligned_sequences, &quot;DNAStringSet&quot;) #this excises the non coding regions, and turns the multiple alignment into DNAstring</code></pre>
 <li>
 Changing the label names of the nucleotide sequences
 </li>
 <pre class="r"><code># change labels to show the Species names.
-#names(muscle_dnastr)#glimpsing at the current labels
-
-#We go into the location of the names, and then divide each string based on spaces.
+names(muscle_dnastr)#glimpsing at the current labels</code></pre>
+<pre><code>##  [1] &quot;KU168760.1 Vicugna pacos huacaya mitochondrion, complete genome&quot;                                 
+##  [2] &quot;JN632650.1 Hyemoschus aquaticus isolate GLC16 mitochondrion, complete genome&quot;                    
+##  [3] &quot;NC_012100.1 Giraffa camelopardalis angolensis mitochondrion, complete genome&quot;                    
+##  [4] &quot;AP003423.1 Camelus bactrianus mitochondrial DNA, complete genome&quot;                                
+##  [5] &quot;AJ010957.1 Hippopotamus amphibius complete mitochondrial DNA sequence&quot;                           
+##  [6] &quot;KM881679.1 Hippidion saldiasi isolate OH mitochondrion, partial genome&quot;                          
+##  [7] &quot;KM881678.1 Hippidion principale isolate JW251 mitochondrion, partial genome&quot;                     
+##  [8] &quot;KT168336.2 Haringtonhippus francisci isolate PH008 mitochondrion, partial genome&quot;                
+##  [9] &quot;KT168322.2 Equus cf. lambei MS316 mitochondrion, partial genome&quot;                                 
+## [10] &quot;KY114520.1 Equus ovodovi isolate DC91 mitochondrion, complete genome&quot;                            
+## [11] &quot;HM068590.1 Pan troglodytes troglodytes isolate WE464 mitochondrion, complete genome&quot;             
+## [12] &quot;NC_020476.1 Equus zebra isolate H11 mitochondrion, complete genome&quot;                              
+## [13] &quot;HQ191429.1 Cervus elaphus songaricus mitochondrion, complete genome&quot;                             
+## [14] &quot;JN632674.1 Okapia johnstoni isolate CYTO mitochondrion, complete genome&quot;                         
+## [15] &quot;NC_023838.1 Tapirus indicus isolate Ti-10 mitochondrion, complete genome&quot;                        
+## [16] &quot;NC_001779.1 Rhinoceros unicornis mitochondrion, complete genome&quot;                                 
+## [17] &quot;FJ905814.1 Diceros bicornis mitochondrion, complete genome&quot;                                      
+## [18] &quot;KX646743.1 Stephanorhinus cf. kirchbergensis PH-2017 isolate JK254 mitochondrion, partial genome&quot;
+## [19] &quot;AJ428947.1 Tapirus terrestris complete mitochondrial genome&quot;                                     
+## [20] &quot;FJ905813.1 Coelodonta antiquitatis mitochondrion, complete genome&quot;                               
+## [21] &quot;NC_001808.1 Ceratotherium simum mitochondrion, complete genome&quot;                                  
+## [22] &quot;MF066643.1 Dicerorhinus sumatrensis isolate KB6198 mitochondrion, complete genome&quot;               
+## [23] &quot;MG931481.1 Equus asinus voucher LZL20180210 mitochondrion, complete genome&quot;                      
+## [24] &quot;MF925712.1 Equus caballus mitochondrion, complete genome&quot;                                        
+## [25] &quot;KT221845.1 Equus przewalskii isolate PrzK02 mitochondrion, complete genome&quot;                      
+## [26] &quot;NC_020433.1 Equus kiang mitochondrion, complete genome&quot;                                          
+## [27] &quot;HM118851.1 Equus hemionus mitochondrion, complete genome&quot;                                        
+## [28] &quot;JX312733.2 Equus burchellii quagga isolate QUAGGA mitochondrion, complete genome&quot;                
+## [29] &quot;NC_020432.2 Equus grevyi mitochondrion, complete genome&quot;                                         
+## [30] &quot;MH937513.1 Elasmotherium sibiricum voucher IPAE 915/2804 mitochondrion, partial genome&quot;</code></pre>
+<pre class="r"><code>#We go into the location of the names, and then divide each string based on spaces.
 #Then we select the second and third field. 
 #We paste those fields together and separate them by a &quot;_&quot;
-#muscle_dnastr@ranges@NAMES &lt;-
-#paste( muscle_dnastr@ranges@NAMES %&gt;% str_split(pattern = &quot; &quot;) %&gt;%map_chr(2),
-#       muscle_dnastr@ranges@NAMES %&gt;% str_split(pattern = &quot; &quot;) %&gt;%map_chr(3),
-#       sep = &quot;_&quot;)
+muscle_dnastr@ranges@NAMES &lt;-
+paste( muscle_dnastr@ranges@NAMES %&gt;% str_split(pattern = &quot; &quot;) %&gt;%map_chr(2),
+       muscle_dnastr@ranges@NAMES %&gt;% str_split(pattern = &quot; &quot;) %&gt;%map_chr(3),
+       sep = &quot;_&quot;)
 
-#names(muscle_dnastr) #taking a glimpse at the names after the change</code></pre>
+names(muscle_dnastr) #taking a glimpse at the names after the change</code></pre>
+<pre><code>##  [1] &quot;Vicugna_pacos&quot;             &quot;Hyemoschus_aquaticus&quot;     
+##  [3] &quot;Giraffa_camelopardalis&quot;    &quot;Camelus_bactrianus&quot;       
+##  [5] &quot;Hippopotamus_amphibius&quot;    &quot;Hippidion_saldiasi&quot;       
+##  [7] &quot;Hippidion_principale&quot;      &quot;Haringtonhippus_francisci&quot;
+##  [9] &quot;Equus_cf.&quot;                 &quot;Equus_ovodovi&quot;            
+## [11] &quot;Pan_troglodytes&quot;           &quot;Equus_zebra&quot;              
+## [13] &quot;Cervus_elaphus&quot;            &quot;Okapia_johnstoni&quot;         
+## [15] &quot;Tapirus_indicus&quot;           &quot;Rhinoceros_unicornis&quot;     
+## [17] &quot;Diceros_bicornis&quot;          &quot;Stephanorhinus_cf.&quot;       
+## [19] &quot;Tapirus_terrestris&quot;        &quot;Coelodonta_antiquitatis&quot;  
+## [21] &quot;Ceratotherium_simum&quot;       &quot;Dicerorhinus_sumatrensis&quot; 
+## [23] &quot;Equus_asinus&quot;              &quot;Equus_caballus&quot;           
+## [25] &quot;Equus_przewalskii&quot;         &quot;Equus_kiang&quot;              
+## [27] &quot;Equus_hemionus&quot;            &quot;Equus_burchellii&quot;         
+## [29] &quot;Equus_grevyi&quot;              &quot;Elasmotherium_sibiricum&quot;</code></pre>
 <li>
 Visualizing the alignment in a Web Browser
 </li>
 <pre class="r"><code>#viewing the sequences in a browser
-#BrowseSeqs(muscle_dnastr)</code></pre>
+BrowseSeqs(muscle_dnastr)</code></pre>
 <li>
 Saving the alignment
 </li>
 <pre class="r"><code>#We do this step in order to be able to build a tree
 #writing the aligned data
-#writeXStringSet(muscle_dnastr, file =&quot;ungulates_muscle_aligned.fasta&quot;)</code></pre>
+writeXStringSet(muscle_dnastr, file =&quot;ungulates_muscle_aligned.fasta&quot;)</code></pre>
 </div>
 <div id="bulding-the-phylogenetic-tree" class="section level3">
 <h3><strong>BULDING THE PHYLOGENETIC TREE</strong></h3>
