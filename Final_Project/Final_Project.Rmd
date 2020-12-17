@@ -202,8 +202,10 @@ Further items of interest include that the grouping of Zebras is contained withi
 
 ### **CONCLUSION**
 <p>
-<ol> <li> Focusing solely on the methods by which we obtained the analysis results, R and Rstudio have proven to be powerful tools to accomplish tasks that might have taken 2 or 3 more distinct software to accomplish.</li> </ol>
-<ol> <li>We have been able to come to the same conclusion by using two different ways of analysis </li> </ol>
+<ol> <li> Focusing solely on the methods by which we obtained the analysis results, R and Rstudio have proven to be powerful tools to accomplish tasks that might have taken 2 or 3 more distinct software to accomplish.</li> 
+<li>We have been able to come to the same conclusion by using two different ways of analysis. </li> 
+<li>An interesting finding remains that Zebrase are contained within the grouping of Donkeys instead of horses.</li>
+</ol>
 
 </p>
 
