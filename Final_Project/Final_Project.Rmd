@@ -89,30 +89,29 @@ oriented_sequences <- OrientNucleotides(raw_sequences)
 #and turning them all to the same length
 
 #muscle alignment
-
-#muscle_aligned_sequences <- muscle(oriented_sequences)
+muscle_aligned_sequences <- muscle(oriented_sequences)
 
 ```
 
 <li> Excising non-coding regions and converting the multiple alignment format into string format </li>
 ```{r, message=FALSE, warning=FALSE}
-#muscle_dnastr = as(muscle_aligned_sequences, "DNAStringSet") #this excises the non coding regions, and turns the multiple alignment into DNAstring
+muscle_dnastr = as(muscle_aligned_sequences, "DNAStringSet") #this excises the non coding regions, and turns the multiple alignment into DNAstring
 ```
 
 <li> Changing the label names of the nucleotide sequences </li>
 ```{r, message=FALSE, warning=FALSE}
 # change labels to show the Species names.
-#names(muscle_dnastr)#glimpsing at the current labels
+names(muscle_dnastr)#glimpsing at the current labels
 
 #We go into the location of the names, and then divide each string based on spaces.
 #Then we select the second and third field. 
 #We paste those fields together and separate them by a "_"
-#muscle_dnastr@ranges@NAMES <-
-#paste( muscle_dnastr@ranges@NAMES %>% str_split(pattern = " ") %>%map_chr(2),
-#       muscle_dnastr@ranges@NAMES %>% str_split(pattern = " ") %>%map_chr(3),
-#       sep = "_")
+muscle_dnastr@ranges@NAMES <-
+paste( muscle_dnastr@ranges@NAMES %>% str_split(pattern = " ") %>%map_chr(2),
+       muscle_dnastr@ranges@NAMES %>% str_split(pattern = " ") %>%map_chr(3),
+       sep = "_")
 
-#names(muscle_dnastr) #taking a glimpse at the names after the change
+names(muscle_dnastr) #taking a glimpse at the names after the change
 
 
 ```
@@ -120,14 +119,14 @@ oriented_sequences <- OrientNucleotides(raw_sequences)
 <li> Visualizing the alignment in a Web Browser </li>
 ```{r, message=FALSE, warning=FALSE}
 #viewing the sequences in a browser
-#BrowseSeqs(muscle_dnastr)
+BrowseSeqs(muscle_dnastr)
 ```
 
 <li> Saving the alignment </li>
 ```{r, message=FALSE, warning=FALSE}
 #We do this step in order to be able to build a tree
 #writing the aligned data
-#writeXStringSet(muscle_dnastr, file ="ungulates_muscle_aligned.fasta")
+writeXStringSet(muscle_dnastr, file ="ungulates_muscle_aligned.fasta")
 ```
 
 
